@@ -7,6 +7,14 @@
     <title>ServiYama</title>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
     <style id="expo-reset">
+      :root {
+        --web-bg-top: #eef2f7;
+        --web-bg-bottom: #e6ebf2;
+        --web-shell: #ffffff;
+        --web-shell-border: #d5dce5;
+        --web-shell-shadow: 0 20px 46px rgba(15, 23, 42, 0.16);
+      }
+
       /* These styles make the body full-height */
       html,
       body {
@@ -22,6 +30,66 @@
         height: 100%;
         flex: 1;
       }
+
+      /* Tablet */
+      @media (min-width: 768px) and (max-width: 1199px) {
+        html,
+        body {
+          background: linear-gradient(180deg, var(--web-bg-top), var(--web-bg-bottom));
+        }
+
+        body {
+          margin: 0;
+          overflow: auto;
+        }
+
+        #root {
+          min-height: 100%;
+          padding: 12px;
+          box-sizing: border-box;
+        }
+
+        #root > div {
+          width: 100%;
+          min-height: calc(100vh - 24px);
+          border-radius: 14px;
+          overflow: hidden;
+          border: 1px solid var(--web-shell-border);
+          box-shadow: var(--web-shell-shadow);
+          background: var(--web-shell);
+        }
+      }
+
+      /* Desktop */
+      @media (min-width: 1200px) {
+        html,
+        body {
+          background: radial-gradient(circle at 10% 15%, #f4f6fa, #e6ebf2 42%);
+        }
+
+        body {
+          margin: 0;
+          overflow: auto;
+        }
+
+        #root {
+          min-height: 100%;
+          padding: 18px;
+          box-sizing: border-box;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #root > div {
+          width: min(1520px, 100%);
+          min-height: min(960px, calc(100vh - 36px));
+          border-radius: 18px;
+          overflow: hidden;
+          border: 1px solid var(--web-shell-border);
+          box-shadow: var(--web-shell-shadow);
+          background: var(--web-shell);
+        }
+      }
     </style>
   <link rel="icon" href="/favicon.ico" /></head>
 
@@ -32,6 +100,6 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/_expo/static/js/web/index-acc2d102ec93feaca1c0b5777813a7fe.js" defer></script>
+  <script src="/_expo/static/js/web/index-716d681bf3c067545aaaa32b313b517e.js" defer></script>
 </body>
 </html>
